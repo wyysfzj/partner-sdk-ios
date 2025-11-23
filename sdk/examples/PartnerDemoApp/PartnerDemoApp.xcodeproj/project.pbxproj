@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		APP_APP_SWIFT /* PartnerDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_APP_SWIFT /* PartnerDemoAppApp.swift */; };
+		APP_CONTENT_SWIFT /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_CONTENT_SWIFT /* ContentView.swift */; };
+		APP_CORE_FRAMEWORK /* HSBCPartnerSDKCore in Frameworks */ = {isa = PBXBuildFile; productRef = PROD_CORE /* HSBCPartnerSDKCore */; };
+		APP_PLUGINS_FRAMEWORK /* HSBCPlugins in Frameworks */ = {isa = PBXBuildFile; productRef = PROD_PLUGINS /* HSBCPlugins */; };
+		APP_DEMO_MANIFEST /* demo_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = FILE_DEMO_MANIFEST /* demo_manifest.json */; };
+		APP_DEMO_OAPI /* demo_openapi.json in Resources */ = {isa = PBXBuildFile; fileRef = FILE_DEMO_OAPI /* demo_openapi.json */; };
+		APP_DEMO_HTML /* demo_page.html in Resources */ = {isa = PBXBuildFile; fileRef = FILE_DEMO_HTML /* demo_page.html */; };
+		UIT_UIT_SWIFT /* PartnerDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_UIT_SWIFT /* PartnerDemoAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FILE_APP_PRODUCT /* PartnerDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartnerDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FILE_APP_SWIFT /* PartnerDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDemoAppApp.swift; sourceTree = "<group>"; };
+		FILE_CONTENT_SWIFT /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FILE_DEMO_MANIFEST /* demo_manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo_manifest.json; sourceTree = "<group>"; };
+		FILE_DEMO_OAPI /* demo_openapi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo_openapi.json; sourceTree = "<group>"; };
+		FILE_DEMO_HTML /* demo_page.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = demo_page.html; sourceTree = "<group>"; };
+		FILE_UIT_PRODUCT /* PartnerDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PartnerDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FILE_UIT_SWIFT /* PartnerDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDemoAppUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		APP_FRAMEWORKS /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP_CORE_FRAMEWORK /* HSBCPartnerSDKCore in Frameworks */,
+				APP_PLUGINS_FRAMEWORK /* HSBCPlugins in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		UIT_FRAMEWORKS /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		MAIN /* Main Group */ = {
+			isa = PBXGroup;
+			children = (
+				APP_GROUP /* PartnerDemoApp */,
+				UIT_GROUP /* PartnerDemoAppUITests */,
+				PRODUCTS /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		PRODUCTS /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FILE_APP_PRODUCT /* PartnerDemoApp.app */,
+				FILE_UIT_PRODUCT /* PartnerDemoAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		APP_GROUP /* PartnerDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				FILE_APP_SWIFT /* PartnerDemoAppApp.swift */,
+				FILE_CONTENT_SWIFT /* ContentView.swift */,
+				FILE_DEMO_MANIFEST /* demo_manifest.json */,
+				FILE_DEMO_OAPI /* demo_openapi.json */,
+				FILE_DEMO_HTML /* demo_page.html */,
+			);
+			path = PartnerDemoApp;
+			sourceTree = "<group>";
+		};
+		UIT_GROUP /* PartnerDemoAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FILE_UIT_SWIFT /* PartnerDemoAppUITests.swift */,
+			);
+			path = PartnerDemoAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		APP_TGT /* PartnerDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = APP_CONFIG_LIST /* Build configuration list for PBXNativeTarget "PartnerDemoApp" */;
+			buildPhases = (
+				APP_SOURCES /* Sources */,
+				APP_FRAMEWORKS /* Frameworks */,
+				APP_RESOURCES /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PartnerDemoApp;
+			productName = PartnerDemoApp;
+			productReference = FILE_APP_PRODUCT /* PartnerDemoApp.app */;
+			productType = "com.apple.product-type.application";
+			packageProductDependencies = (
+				PROD_CORE /* HSBCPartnerSDKCore */,
+				PROD_PLUGINS /* HSBCPlugins */,
+			);
+		};
+		UIT_TGT /* PartnerDemoAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = UIT_CONFIG_LIST /* Build configuration list for PBXNativeTarget "PartnerDemoAppUITests" */;
+			buildPhases = (
+				UIT_SOURCES /* Sources */,
+				UIT_FRAMEWORKS /* Frameworks */,
+				UIT_RESOURCES /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PartnerDemoAppUITests;
+			productName = PartnerDemoAppUITests;
+			productReference = FILE_UIT_PRODUCT /* PartnerDemoAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJECT /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					APP_TGT = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					UIT_TGT = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = APP_TGT;
+					};
+				};
+			};
+			buildConfigurationList = PROJ_CONFIG_LIST /* Build configuration list for PBXProject "PartnerDemoApp" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = MAIN;
+			productRefGroup = PRODUCTS /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				APP_TGT /* PartnerDemoApp */,
+				UIT_TGT /* PartnerDemoAppUITests */,
+			);
+			packageReferences = (
+				PKG_REF /* XCRemoteSwiftPackageReference "HSBCPartnerSDK" */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		APP_RESOURCES /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP_DEMO_MANIFEST /* demo_manifest.json in Resources */,
+				APP_DEMO_OAPI /* demo_openapi.json in Resources */,
+				APP_DEMO_HTML /* demo_page.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		UIT_RESOURCES /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		APP_SOURCES /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP_CONTENT_SWIFT /* ContentView.swift in Sources */,
+				APP_APP_SWIFT /* PartnerDemoAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		UIT_SOURCES /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				UIT_UIT_SWIFT /* PartnerDemoAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		PKG_REF /* XCRemoteSwiftPackageReference "HSBCPartnerSDK" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../..";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		PROD_CORE /* HSBCPartnerSDKCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = PKG_REF /* XCRemoteSwiftPackageReference "HSBCPartnerSDK" */;
+			productName = HSBCPartnerSDKCore;
+		};
+		PROD_PLUGINS /* HSBCPlugins */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = PKG_REF /* XCRemoteSwiftPackageReference "HSBCPartnerSDK" */;
+			productName = HSBCPlugins;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCBuildConfiguration section */
+		PROJ_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		PROJ_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		APP_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsbc.partnerdemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		APP_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsbc.partnerdemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		UIT_DEBUG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsbc.partnerdemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PartnerDemoApp;
+			};
+			name = Debug;
+		};
+		UIT_RELEASE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsbc.partnerdemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PartnerDemoApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		PROJ_CONFIG_LIST /* Build configuration list for PBXProject "PartnerDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				PROJ_DEBUG /* Debug */,
+				PROJ_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		APP_CONFIG_LIST /* Build configuration list for PBXNativeTarget "PartnerDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				APP_DEBUG /* Debug */,
+				APP_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		UIT_CONFIG_LIST /* Build configuration list for PBXNativeTarget "PartnerDemoAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				UIT_DEBUG /* Debug */,
+				UIT_RELEASE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = PROJECT /* Project object */;
+}

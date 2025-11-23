@@ -1,0 +1,34 @@
+{
+  "manifestVersion": "1.1",
+  "minSdk": "1.0.0",
+  "journeyId": "money_transfer",
+  "oapiBundle": "demo_openapi.json",
+  "locales": ["en-US"],
+  "startStep": "intro",
+  "headers": {},
+  "security": {
+    "allowedOrigins": ["https://example.com"],
+    "pinning": false,
+    "attestation": {},
+    "requireHandshake": false
+  },
+  "steps": {
+    "intro": {
+      "type": "web",
+      "url": "demo_page.html",
+      "bridgeAllow": [],
+      "on": {
+        "submit": {
+          "to": "done"
+        }
+      }
+    },
+    "done": {
+      "type": "terminal",
+      "result": {
+        "demo": true
+      }
+    }
+  },
+  "signature": "demo-signature"
+}

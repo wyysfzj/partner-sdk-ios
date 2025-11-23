@@ -1,0 +1,1 @@
+{"headers":{},"minSdk":"1.0.0","oapiBundle":"https:\/\/example.com\/bundle","steps":{},"startStep":"step1","signature":"dummy","journeyId":"test-journey","security":{"requireHandshake":false,"pinning":false,"allowedOrigins":[]},"manifestVersion":"1.1"}

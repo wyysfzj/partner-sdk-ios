@@ -1,0 +1,17 @@
+# Overall Backlog / Open Gaps
+
+| Area | Gap / Work Item | Questions for BA/SA | Status |
+| --- | --- | --- | --- |
+| Certificate Pinning | No dual-pin (current+next); no per-host pins; trust delegate uses system trust only; no dev bypass flag tied to manifest security.pinning. | Provide pin material per environment/host? Should dev bypass be controlled via manifest flag? | Open |
+| Attestation & Bridge Signing | Attestation stub (UUID/base64) not bound to context/resume; bridge signing uses ephemeral key/kid; no persistent keypair or published public key; no JWE for sensitive plugin outputs. | What attestation mechanism (DeviceCheck/App Attest) and binding rules? How to distribute bridge public key/JWE keys to pages? | Open |
+| Manifest Schema & Header Templating | No JM v1.1 JSON schema enforcement; manifestVersion not strictly validated; headers not templated (e.g., contextToken); remoteConfigURL unused for manifest/OAS or signed kill-switch config. | Provide official JM schema? Header templating rules/placeholders? Remote config endpoint/signing format? | Open |
+| Runtime Completion Mapping | No manifest-driven error/transition mapping to JourneyResult; handshake/origin-block/pinning/attestation failures not surfaced with nuanced recoverability. | How should manifest define error → JourneyResult/recoverable? | Open |
+| State/Resume | Snapshots minimal; resumeToken not used to restore; no rotation/encryption; resumePolicy snapshotOn events not respected. | What events trigger snapshots per resumePolicy? Resume token encryption/rotation requirements? | Open |
+| Bridge v1.1 Details | JWS signed with ephemeral key; no stable kid/public key; no JWE option; SdkErrorCode not embedded; allowed-method enforcement depends on state transitions not driven by page events. | Should bridge include SdkErrorCode? How to wire state updates from page transitions? JWE requirements? | Open |
+| Web Policies / ATS | WebPolicies only check scheme/host; dev file:// flag missing; ATS/WKAppBoundDomains not set in demo; CSP guidance not enforced. | Provide ATS/AppBoundDomains/CSP requirements for demo? Allow file:// in dev? | Open |
+| OpenAPI/Manifest Consistency | Only binding operationIds validated; no check that all manifest operations exist in OAS servers/paths; base URL resolution from OAS is brittle. | Should we enforce server list validation? How to derive base URL if OAS absent? | Open |
+| ApiClient | Pinning rudimentary; idempotency header only; error mapping doesn’t inspect validation bodies or map MORE_INFO/COMPLIANCE_HOLD/SCA_REQUIRED. | Provide error body schema for mapping? Idempotency rules? | Open |
+| Plugins | Only biometric plugin; PluginRegistry not auto-registered; plugin errors not mapped to SdkErrorCode/JourneyResult. | Which plugins are required (doc scan, file picker, etc.)? How to map plugin errors? | Open |
+| Demo App & UI Test | Demo pages absent; UITest only checks static label (no WKWebView interactions); ATS/AppBoundDomains not set. | Provide demo pages or stub flow? Target domains for ATS/AppBound? | Open |
+| CI/Release | Workflow hardcodes Xcode path; assumes dist/HSBCPartnerSDKCore.xcframework exists; no pin/checksum validation or artifact verification. | Preferred Xcode version selection? Release artifact validation requirements? | Open |
+| Docs/Checklists | DONE_CHECKLIST overstates coverage; SECURITY_BACKLOG items largely unimplemented; DEV_MACRO_PROMPTS lack pinning/attestation/JWE closure guidance. | Should DONE reflect current demo-only status? Clarify doc expectations? | Open |

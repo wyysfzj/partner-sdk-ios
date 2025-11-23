@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HSBC Partner SDK Demo</title>
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #f4f6fb 0%, #dfe7f5 100%);
+      --primary: #0a5fb4;
+      --muted: #4b5563;
+      --card: #ffffff;
+      --shadow: 0 18px 50px rgba(16, 38, 84, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0a0a0a;
+      padding: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      width: min(420px, 100%);
+      box-shadow: var(--shadow);
+    }
+    h1 { font-size: 24px; margin: 0 0 12px; color: #0a0a0a; }
+    p { font-size: 15px; color: var(--muted); margin: 0 0 20px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; text-align: left; }
+    label { font-weight: 600; color: #1f2937; }
+    input, select {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    input:focus, select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(10, 95, 180, 0.12);
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--primary);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 12px 24px rgba(10, 95, 180, 0.25);
+    }
+    button:active { transform: translateY(1px); box-shadow: 0 8px 16px rgba(10,95,180,0.2); }
+    .status {
+      text-align: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Money Transfer</h1>
+    <p>Send a quick transfer to a saved payee.</p>
+    <div class="field">
+      <label for="from">From account</label>
+      <select id="from">
+        <option>Everyday Checking •••• 1024</option>
+        <option>Premier Savings •••• 4420</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="to">To payee</label>
+      <select id="to">
+        <option>Jordan Lee •••• 8899</option>
+        <option>ACME Corp •••• 7721</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="amount">Amount</label>
+      <input id="amount" type="number" min="1" step="1" value="250" />
+    </div>
+    <div class="field">
+      <label for="note">Reference</label>
+      <input id="note" type="text" placeholder="Rent for June" />
+    </div>
+    <button id="submit">Submit transfer</button>
+    <div class="status" id="status">Awaiting submission…</div>
+  </div>
+
+  <script>
+    const bridge = {
+      post(kind, name, payload = {}, id = null) {
+        const msg = { kind, name, payload };
+        if (id !== null) msg.id = id;
+        if (window.webkit?.messageHandlers?.hsbcBridge) {
+          window.webkit.messageHandlers.hsbcBridge.postMessage(msg);
+        } else {
+          console.log("hsbcBridge not available", msg);
+        }
+      }
+    };
+
+    const statusEl = document.getElementById('status');
+
+    function handshake() {
+      const nonce = Math.random().toString(36).slice(2);
+      const origin = window.location.origin || 'file://';
+      console.log('[demo_page] bridge_hello', origin);
+      bridge.post('event', 'bridge_hello', { origin, pageNonce: nonce });
+      statusEl.textContent = 'Connected to HSBC Partner SDK';
+    }
+
+    function submitTransfer() {
+      const payload = {
+        from: document.getElementById('from').value,
+        to: document.getElementById('to').value,
+        amount: Number(document.getElementById('amount').value || 0),
+        note: document.getElementById('note').value || ''
+      };
+      console.log('[demo_page] submit', payload);
+      statusEl.textContent = 'Submitting…';
+      bridge.post('event', 'submit', payload);
+    }
+
+    document.getElementById('submit').addEventListener('click', submitTransfer);
+    window.addEventListener('load', handshake);
+  </script>
+</body>
+</html>
